@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="imagem/png" href="/assets/emoji/rosto.PNG">
+    <title>Eduardo Kenji</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Eduardo Kenji</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#desktop-nav">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#experience">Skills</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="icone-nav">
+        <div class="logo">Eduardo Kenji</div>
+        <div class="icone-menu">
+            <div class="icone-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="Sobre" onclick="toggleMenu()">Sobre</a></li>
+                <li><a href="Skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="Projetos" onclick="toggleMenu()">Projetos</a></li>
+                <li><a href="Contato" onclick="toggleMenu()">Contato</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="/assets/emoji/rosto.PNG" alt="foto perfil">
+        </div>
+        <div class="section__text">
+            <p class="section__text_p1">Olá, eu sou</p>
+            <h1 class="title">Eduardo Kenji</h1>
+            <p class="section__text__p2">Desenvolvedor Frontend</p>
+            <div class="btn-container">
+                <button class="btn-color-2" onclick="window.open('./assets/curriculo/Curriculo-Eduardo-Kenji.pdf')">
+                    Meu Currículo
+                    <div class="hoverEffect">
+                        <div></div>
+                    </div>
+                </button>
+
+                <button class="btn-color-1" onclick="location.href='./#contact'">
+                    Contato
+                    <div class="hoverEffect">
+                        <div></div>
+                    </div>
+                </button>
+
+
+            </div>
+            <div id="social-container">
+                <img src="./assets/img/linkedin.png" 
+                    alt="perfil linkedIn" 
+                    class="icon" 
+                    onclick="location.href='https://www.linkedin.com/in/eduardo-kenji/'">
+
+                <img src="./assets/img/github.png" 
+                    alt="perfil linkedIn" 
+                    class="icon" 
+                    onclick="location.href='https://github.com/Kenjiisok'">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section__text__p1">Me conheça melhor</p>
+        <h1 class="title">Sobre mim</h1>
+        <div class="section-container">
+          <div class="section__pic-container">
+            <img
+              src="./assets/emoji/corpo.PNG"
+              alt="Profile picture"
+              class="about-pic"
+            />
+          </div>
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <img
+                  src="./assets/img/experience.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <h3>Experiência</h3>
+                <p>Ainda a procura do meu primeiro emprego<br />Frontend Development</p>
+              </div>
+              <div class="details-container">
+                <img
+                  src="./assets/img/education.png"
+                  alt="Education icon"
+                  class="icon"
+                />
+                <h3>Educação</h3>
+                <p>Técnologo<br /></p>
+              </div>
+            </div>
+            <div class="text-container">
+              <p>
+                Sempre tive preferência pela área de exatas, conforme
+                conforme cresci fiquei cada vez mais em torno de novas
+                técnologias e me apaixonei, assim decidi o que eu queria
+                ser quando crescer. Atualmente estou cursando meu útimo
+                semestre em Análise e Desenvolvimento de Sistemas na FIAP,
+                além do front-end tenho conhecimentos no back-end e
+                metodologias ágeis, como SCRUM.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./assets/img/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#experience'"
+        />
+      </section>
+
+      <section id="experience">
+        <p class="section__text__p1">Explore minhas</p>
+        <h1 class="title">Skills</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Developnent</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Òtimo</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Básico</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>Material de UI</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>Mobile</h3>
+                                <p>Básico</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Developnent</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>Java</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/img/checkmark.png" 
+                                alt="verificado icon" 
+                                class="icon"
+                            />
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img
+            src="./assets/img/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#projects'"
+        />
+      </section>
+
+      <section id="projects">
+        <p class="section__text__p1">Vejs os meus</p>
+        <h1 class="title">Projetos</h1>
+        <div class="projects-container">
+            <div class="projects-cards">
+                <div class="card-project">
+                    <div class="project-final">
+                        <h2>Portifólio</h2>
+                        <p>HTML || CSS || JS</p>
+                    </div>
+                    <div class="image-project">
+                        <a href="">
+                            <img src="./assets/projetos/portifolioprint.png" 
+                                alt="foto do projeto" 
+                                class="display-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img
+            src="./assets/img/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#contact'"
+        />
+      </section>
+
+      <section id="contact">
+        <p class="section__text__p1">Entre em</p>
+        <h1 class="title">Contato</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/img/email.png" 
+                    alt="email icon"
+                    class="icon contact-icon email-icon"
+                />
+                <p><a href="mailto:dudu.hirose@hotmail.com">Exemplo.gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/img/linkedin.png" 
+                    alt="LinkedIn icon"
+                    class="icon contact-icon"
+                />
+                <p><a href="https://www.linkedin.com/in/eduardo-kenji/">LinkedIn</a></p>
+            </div>
+        </div>
+      </section>
+
+      <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#desktop-nav">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#experience">Skills</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+      </footer>
+    <script src="script.js"></script>
+</body>
+</html>
