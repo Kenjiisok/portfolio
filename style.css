@@ -386,6 +386,15 @@ article .icon{
     position: relative;
 }
 
+.image-project{
+    box-shadow: 1px 1px 5px rgba(39, 39, 39, 0.4);
+}
+
+.display-image{
+    cursor: default;
+}
+
+
 /*Sessao de contato*/
 
 #contact{
@@ -431,15 +440,4 @@ article .icon{
 
 footer{
     height: 15vh;
-}
-
-/*media queries*/
-
-@media screen and (max-width: 1200px){
-    #desktop-nav{
-        display: none;
-    }
-    #icone-nav{
-        display: flex;
-    }
 }
