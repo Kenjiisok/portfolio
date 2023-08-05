@@ -319,7 +319,7 @@ section {
 }
 
 .details-container{
-    padding: 1.5rem;
+    padding: 1.0rem;
     flex: 1;
     background-color: white;
     border-radius: 2rem;
@@ -364,7 +364,7 @@ section {
     text-align: initial;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 2.5rem;
+    gap: 1rem;
     justify-content: space-around;
 }
 
