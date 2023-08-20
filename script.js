@@ -3,4 +3,4 @@ function toggleMenu() {
     const icon = document.querySelector(".icone-icon");
     menu.classList.toggle("open");
     icon.classList.toggle("open");
-  }
+}
