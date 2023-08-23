@@ -151,7 +151,7 @@ a:hover{
 
 section {
     padding-top: 3vh;
-    height: 97vh;
+    height: 95vh;
     margin: 0 20rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -392,8 +392,9 @@ article .icon{
 
 .display-image{
     cursor: default;
+    width: 909px;
+    height: 470px;
 }
-
 
 /*Sessao de contato*/
 
@@ -437,7 +438,6 @@ article .icon{
 
 
 /*footer*/
-
 footer{
-    height: 15vh;
+    height: 10vh;
 }
