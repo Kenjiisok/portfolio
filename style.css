@@ -397,7 +397,7 @@ article .icon{
 }
 
 .display-image{
-    cursor: default;
+    cursor: pointer;
     width: 909px;
     height: 470px;
 }
