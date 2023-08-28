@@ -1,3 +1,9 @@
+@media screen and (max-width: 3000px) {
+  #mobile-footer{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1700px) {
   #profile {
     height: 83vh;
@@ -33,6 +39,9 @@
     margin: 0 auto 2rem;
   }
 
+  #mobile-footer{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -68,6 +77,10 @@
       width: 275px;
       height: 275px;
       margin: 0 auto 2rem;
+    }
+
+    #mobile-footer{
+      display: none;
     }
 
   }
@@ -118,13 +131,26 @@
     #contact{
         margin-top: 7vh;
     }
+
+    #mobile-footer{
+      display: none;
+    }
   }
 
   @media screen and (max-width: 900px) {
     #desktop-nav {
       display: none;
     }
+    
     #icone-nav {
+      display: flex;
+    }
+
+    #footer-desktop{
+      display: none;
+    }
+
+    #mobile-footer{
       display: flex;
     }
   }
@@ -181,5 +207,13 @@
     }
     .text-container {
       text-align: justify;
+    }
+
+    #footer-desktop{
+      display: none;
+    }
+
+    #mobile-footer{
+      display: flex;
     }
   }
