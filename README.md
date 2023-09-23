@@ -1,4 +1,5 @@
-<h1 align="center" dir="auto">Portfolio Pessoal</h1>
+<h1 align="center" dir="auto">Portfolio Pessoal -- ⚠️ EM BREVE UM README ATUALIZADO ⚠️ -- 
+</h1> 
 
 <h2>Sobre:</h2>
 
