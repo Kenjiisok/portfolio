@@ -393,13 +393,16 @@ article .icon{
 }
 
 .image-project{
-    box-shadow: 1px 1px 5px rgba(39, 39, 39, 0.4);
+    box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.8);
 }
 
 .display-image{
     cursor: pointer;
-    width: 909px;
-    height: 470px;
+    width: 100%;
+}
+
+.card-project{
+    width: 100%;
 }
 
 /*Sessao de contato*/
