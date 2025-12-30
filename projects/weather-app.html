@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Weather App - Aplicativo de previsão do tempo desenvolvido em Next.js com TypeScript e Tailwind CSS." />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mediaqueries.css" />
+    <link rel="icon" type="image/png" href="../assets/emoji/rosto.PNG" />
+    <title>Weather App | Eduardo Kenji</title>
+    <style>
+        .project-page {
+            padding: 100px 10%;
+            min-height: 100vh;
+        }
+
+        .project-hero {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .project-image-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: var(--neo-shadow-sm);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .tech-tag {
+            padding: 10px 20px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neo-shadow-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-primary);
+        }
+
+        .cta-section {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--accent-gradient);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--neo-shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neo-shadow-lg);
+            color: white;
+        }
+
+        .features-section {
+            margin-top: 60px;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow-sm);
+            margin-bottom: 40px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            box-shadow: var(--neo-inset-sm);
+        }
+
+        .setup-section {
+            margin-top: 60px;
+        }
+
+        .setup-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .setup-steps {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+        }
+
+        .setup-step {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--shadow-dark);
+        }
+
+        .setup-step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .setup-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--accent-primary);
+        }
+
+        .setup-step p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .code-block {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-family: monospace;
+            box-shadow: var(--neo-inset-sm);
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 900px) {
+            .project-hero {
+                flex-direction: column;
+            }
+
+            .project-title {
+                text-align: center;
+                font-size: 2.2rem;
+            }
+
+            .project-subtitle {
+                text-align: center;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <a href="../index.html" class="logo">Eduardo Kenji</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#profile">Home</a></li>
+            <li><a href="../index.html#about">Sobre</a></li>
+            <li><a href="../index.html#experience">Skills</a></li>
+            <li><a href="../index.html#projects">Projetos</a></li>
+            <li><a href="../index.html#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">← Voltar para Projetos</a>
+
+        <div class="project-hero">
+            <div class="project-image-container">
+                <img src="../assets/projetos/weather_app.png" alt="Weather App - Previsão do Tempo" />
+            </div>
+            <div class="project-info">
+                <div class="project-badge">🌥️ Previsão do Tempo</div>
+                <h1 class="project-title">Weather App</h1>
+                <p class="project-subtitle">
+                    Aplicativo de previsão do tempo desenvolvido em Next.js com TypeScript e Tailwind CSS. Utiliza a
+                    Weather API para fornecer informações meteorológicas atualizadas de qualquer cidade do mundo.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Weather API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="features-title">✨ Funcionalidades</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Busca por Cidade</h3>
+                    <p>Pesquise o clima de qualquer cidade do mundo através da barra de busca.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Temperatura Atualizada</h3>
+                    <p>Informações meteorológicas em tempo real com dados precisos da Weather API.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💨</div>
+                    <h3>Condições Climáticas</h3>
+                    <p>Veja condições como umidade, velocidade do vento e sensação térmica.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Design Responsivo</h3>
+                    <p>Interface moderna e adaptável para qualquer dispositivo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Ver Código no GitHub</h2>
+            <p class="cta-text">
+                Acesse o repositório completo com o código fonte e instruções detalhadas.
+            </p>
+            <a href="https://github.com/Kenjiisok/weather_app" target="_blank" class="cta-button">
+                🔗 Acessar GitHub
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="footer-desktop">
+            <ul class="nav-links">
+                <li><a href="../index.html#profile">Home</a></li>
+                <li><a href="../index.html#about">Sobre</a></li>
+                <li><a href="../index.html#experience">Skills</a></li>
+                <li><a href="../index.html#projects">Projetos</a></li>
+                <li><a href="../index.html#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

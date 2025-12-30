@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="SelectQR - Extensão Chrome 100% offline para ler QR codes diretamente da tela do computador." />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mediaqueries.css" />
+    <link rel="icon" type="image/png" href="../assets/emoji/rosto.PNG" />
+    <title>SelectQR | Eduardo Kenji</title>
+    <style>
+        .project-page {
+            padding: 100px 10%;
+            min-height: 100vh;
+        }
+
+        .project-hero {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .project-image-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: var(--neo-shadow-sm);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .tech-tag {
+            padding: 10px 20px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            box-shadow: var(--neo-shadow-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-primary);
+        }
+
+        .cta-section {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--accent-gradient);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--neo-shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neo-shadow-lg);
+            color: white;
+        }
+
+        .features-section {
+            margin-top: 60px;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow-sm);
+            margin-bottom: 40px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            box-shadow: var(--neo-inset-sm);
+        }
+
+        .usage-section {
+            margin-top: 60px;
+        }
+
+        .usage-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .usage-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .usage-card {
+            padding: 30px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+        }
+
+        .usage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--accent-primary);
+        }
+
+        .usage-card ol {
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .usage-card li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .keyboard-shortcut {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-family: monospace;
+            font-weight: 600;
+            box-shadow: var(--neo-inset-sm);
+        }
+
+        @media screen and (max-width: 900px) {
+            .project-hero {
+                flex-direction: column;
+            }
+
+            .project-title {
+                text-align: center;
+                font-size: 2.2rem;
+            }
+
+            .project-subtitle {
+                text-align: center;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <a href="../index.html" class="logo">Eduardo Kenji</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#profile">Home</a></li>
+            <li><a href="../index.html#about">Sobre</a></li>
+            <li><a href="../index.html#experience">Skills</a></li>
+            <li><a href="../index.html#projects">Projetos</a></li>
+            <li><a href="../index.html#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">← Voltar para Projetos</a>
+
+        <div class="project-hero">
+            <div class="project-image-container">
+                <img src="../assets/projetos/selectqr.png" alt="SelectQR - Leitor de QR Code" />
+            </div>
+            <div class="project-info">
+                <div class="project-badge">🔒 100% Offline & Privado</div>
+                <h1 class="project-title">SelectQR</h1>
+                <p class="project-subtitle">
+                    Extensão Chrome para ler QR codes diretamente da tela do seu computador. Totalmente offline, sem
+                    rastreamento e código open source. Funciona em qualquer página web!
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Chrome Extension</span>
+                    <span class="tech-tag">Manifest V3</span>
+                    <span class="tech-tag">jsQR</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="features-title">✨ Recursos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Offline</h3>
+                    <p>Todos os dados são processados localmente no seu navegador. Nenhuma informação é enviada para
+                        servidores externos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>Sem Rastreamento</h3>
+                    <p>Código 100% open source, sem telemetria ou analytics. Sua privacidade é prioridade.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Funciona em Qualquer Página</h3>
+                    <p>Leia QR codes em qualquer site, imagem ou documento aberto no seu navegador.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Detecção de URLs</h3>
+                    <p>Detecta automaticamente quando o QR code contém um link e permite abrir diretamente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Copiar com Um Clique</h3>
+                    <p>Copie o resultado da leitura instantaneamente para a área de transferência.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Múltiplas Línguas</h3>
+                    <p>Suporte a Português, Inglês, Espanhol, Francês, Alemão e Japonês.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h2 class="usage-title">🚀 Como Usar</h2>
+            <div class="usage-methods">
+                <div class="usage-card">
+                    <h3>Método 1: Pelo Ícone</h3>
+                    <ol>
+                        <li>Clique no ícone da extensão na barra de ferramentas</li>
+                        <li>Clique em "Selecionar área na tela"</li>
+                        <li>Arraste o mouse sobre o QR code</li>
+                        <li>Solte o mouse para capturar e ler</li>
+                    </ol>
+                </div>
+                <div class="usage-card">
+                    <h3>Método 2: Atalho de Teclado</h3>
+                    <ol>
+                        <li>Pressione <span class="keyboard-shortcut">Ctrl+Shift+Q</span> (ou <span
+                                class="keyboard-shortcut">Cmd+Shift+E</span> no Mac)</li>
+                        <li>Arraste o mouse sobre o QR code</li>
+                        <li>Solte o mouse para capturar e ler</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Experimente Agora!</h2>
+            <p class="cta-text">
+                Instale a extensão gratuitamente e comece a ler QR codes diretamente do seu navegador.
+            </p>
+            <a href="https://selectqr.vercel.app/" target="_blank" class="cta-button">
+                🚀 Acessar SelectQR
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="footer-desktop">
+            <ul class="nav-links">
+                <li><a href="../index.html#profile">Home</a></li>
+                <li><a href="../index.html#about">Sobre</a></li>
+                <li><a href="../index.html#experience">Skills</a></li>
+                <li><a href="../index.html#projects">Projetos</a></li>
+                <li><a href="../index.html#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
