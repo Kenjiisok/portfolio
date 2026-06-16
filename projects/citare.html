@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Citare - App iOS de frases inspiradoras com curadoria diária. Desenvolvido em SwiftUI com Clean Architecture e Supabase." />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mediaqueries.css" />
+    <link rel="icon" type="image/png" href="../assets/emoji/rosto.PNG" />
+    <title>Citare | Eduardo Kenji</title>
+    <style>
+        .project-page {
+            padding: 100px 10%;
+            min-height: 100vh;
+        }
+
+        .project-hero {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .project-image-container {
+            flex: 0 0 280px;
+            background: var(--bg-primary);
+            border-radius: 56px;
+            padding: 30px;
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 36px;
+            display: block;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--bg-primary);
+            border-radius: 30px;
+            box-shadow: var(--neo-shadow-sm);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .project-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            padding: 8px 18px;
+            background: var(--bg-primary);
+            border-radius: 30px;
+            box-shadow: var(--neo-shadow-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .features-section {
+            margin-top: 60px;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .premium-section {
+            margin-top: 60px;
+            padding: 50px 40px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            text-align: center;
+        }
+
+        .premium-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .premium-section p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 560px;
+            margin: 25px auto 0;
+            text-align: left;
+        }
+
+        .premium-features div {
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: var(--neo-inset-sm);
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 50px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow);
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neo-shadow-lg);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            margin-top: 18px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .cta-secondary:hover {
+            color: var(--accent-primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--neo-shadow-sm);
+            margin-bottom: 40px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            box-shadow: var(--neo-inset-sm);
+        }
+
+        @media screen and (max-width: 900px) {
+            .project-hero {
+                flex-direction: column;
+            }
+
+            .project-image-container {
+                flex: 0 0 auto;
+                max-width: 220px;
+                margin: 0 auto;
+            }
+
+            .project-title {
+                text-align: center;
+                font-size: 2.2rem;
+            }
+
+            .project-subtitle {
+                text-align: center;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+
+            .premium-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Eduardo Kenji</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="../index.html#profile">Home</a></li>
+                <li><a href="../index.html#about">Sobre</a></li>
+                <li><a href="../index.html#experience">Skills</a></li>
+                <li><a href="../index.html#projects">Projetos</a></li>
+                <li><a href="../index.html#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Eduardo Kenji</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="../index.html#profile" onclick="toggleMenu()">Home</a></li>
+                <li><a href="../index.html#about" onclick="toggleMenu()">Sobre</a></li>
+                <li><a href="../index.html#experience" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="../index.html#projects" onclick="toggleMenu()">Projetos</a></li>
+                <li><a href="../index.html#contact" onclick="toggleMenu()">Contato</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">
+            ← Voltar para Projetos
+        </a>
+
+        <div class="project-hero">
+            <div class="project-image-container">
+                <img src="../assets/projetos/citare.png" alt="Citare - Frases Inspiradoras" />
+            </div>
+            <div class="project-info">
+                <div class="project-badge">📱 Disponível na App Store</div>
+                <h1 class="project-title">Citare</h1>
+                <p class="project-subtitle">
+                    Uma frase inspiradora por dia, com curadoria de pensadores históricos —
+                    de Marco Aurélio a Clarice Lispector, de Laozi a Nietzsche.
+                    Mais de 380 frases verificadas, de 70+ autores reais.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Swift</span>
+                    <span class="tech-tag">SwiftUI</span>
+                    <span class="tech-tag">SwiftData</span>
+                    <span class="tech-tag">Clean Architecture</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">StoreKit 2</span>
+                    <span class="tech-tag">AdMob</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="features-title">✨ Funcionalidades</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Frase do Dia</h3>
+                    <p>Uma frase escolhida cuidadosamente para você todos os dias, sem rolagem infinita.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Recomendação Personalizada</h3>
+                    <p>O algoritmo aprende com seus likes e adapta as próximas frases ao seu gosto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Coleção Pessoal</h3>
+                    <p>Salve suas favoritas para sempre. Disponível offline e no widget da tela inicial.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Modo Escuro Nativo</h3>
+                    <p>Interface elegante adaptada para qualquer hora do dia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Compartilhamento</h3>
+                    <p>Gere imagens elegantes para postar no Instagram, WhatsApp ou qualquer rede.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacidade em Primeiro Lugar</h3>
+                    <p>Sem cadastro obrigatório. UUID anônimo. Sign In com Apple é opcional.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="premium-section">
+            <h2>Citare Premium</h2>
+            <p>
+                Apoie o desenvolvimento por uma única vez (R$ 14,90, sem assinatura)
+                e desbloqueie o pacote completo.
+            </p>
+            <div class="premium-features">
+                <div>🚫 Sem anúncios para sempre</div>
+                <div>❤️ Histórico de curtidas</div>
+                <div>👎 Histórico de descartadas</div>
+                <div>📚 Histórico de leitura</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Baixar agora</h2>
+            <p class="cta-text">
+                Disponível gratuitamente na App Store brasileira.
+            </p>
+            <a href="https://apps.apple.com/br/app/citare-frases-inspiradoras/id6771962884"
+                target="_blank"
+                class="cta-button">
+                📱 Baixar na App Store
+            </a>
+            <br>
+            <a href="https://kenjiisok.github.io/citare-privacy/" target="_blank" class="cta-secondary">
+                Política de privacidade
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="footer-desktop">
+            <ul class="nav-links">
+                <li><a href="../index.html#profile">Home</a></li>
+                <li><a href="../index.html#about">Sobre</a></li>
+                <li><a href="../index.html#experience">Skills</a></li>
+                <li><a href="../index.html#projects">Projetos</a></li>
+                <li><a href="../index.html#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
