@@ -94,7 +94,7 @@ exports.handler = async (event) => {
     `;
 
     const resendRes = await sendViaResend(apiKey, {
-      from: "H-26 <onboarding@resend.dev>",
+      from: "H-26 <h26@eduardokenji.com>",
       to: [DEST_EMAIL],
       subject,
       html,
