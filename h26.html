@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Projeto H-26</title>
+<style>
+:root{--bg:#070707;--panel:#0d0d0d;--line:#2a2a2a;--text:#dedbd2;--muted:#85827b;--red:#b82929;--green:#7fd28b}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at center,#111 0,#050505 68%);color:var(--text);font-family:"Courier New",monospace;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 3px);mix-blend-mode:screen}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 18px 70px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px}.brand{display:flex;align-items:center;gap:14px}.mark{width:54px;height:54px;border:2px solid var(--text);display:grid;place-items:center;font-size:24px;font-weight:700}.brand h1{font-size:23px;margin:0;letter-spacing:2px}.brand small,.meta{color:var(--muted)}.meta{text-align:right;font-size:12px;line-height:1.6}.hero{padding:70px 0 46px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--red);font-size:13px;letter-spacing:2px}.hero h2{font-size:clamp(42px,8vw,92px);margin:8px 0 12px;letter-spacing:8px}.hero p{max-width:780px;line-height:1.7;color:#aaa79f}.terminal{margin-top:26px;color:#b4b0a8;line-height:1.7;font-size:14px}.btn{margin-top:26px;background:transparent;color:var(--text);border:1px solid #77736b;padding:14px 20px;font-family:inherit;letter-spacing:1px;cursor:pointer}.btn:hover{border-color:var(--red);color:#fff}.btn:disabled{opacity:.5;cursor:not-allowed}.screen{display:none;padding:46px 0}.screen.active{display:block}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px}.panel{border:1px solid var(--line);background:rgba(255,255,255,.015);padding:24px}.panel h3{font-size:28px;margin:0 0 18px}.panel p{color:#aaa79f;line-height:1.6}.field{margin:20px 0}.field label{display:block;margin-bottom:8px;color:#c7c3ba;font-size:13px;letter-spacing:1px}.field input,.field select{width:100%;background:#090909;border:1px solid #45423e;color:var(--text);padding:13px;font-family:inherit}.radio{display:flex;flex-direction:column;gap:10px}.radio label{display:flex;gap:10px;align-items:center;color:#c7c3ba}.warning{border-left:3px solid var(--red);padding:12px 14px;background:rgba(184,41,41,.06);color:#c7b0b0}.side-code{font-size:12px;color:var(--muted);line-height:1.8}.glitch{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;background:#050505;border:1px solid #2b2b2b;padding:24px 32px;color:#fff;display:none;box-shadow:0 0 0 9999px rgba(0,0,0,.72);font-size:26px;letter-spacing:2px;text-align:center}.progress{height:14px;border:1px solid #5c5851;margin:24px 0}.bar{height:100%;width:0;background:#b7b3aa;transition:width .35s}.status{font-size:15px;line-height:2;color:#b7b3aa}.status.err{color:var(--red)}.confirmed{color:var(--green);font-size:18px}.subject{font-size:78px;color:var(--red);margin:0}.details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.detail{border-top:1px solid var(--line);padding-top:10px}.detail b{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.footer{margin-top:50px;border-top:1px solid var(--line);padding-top:18px;color:#6f6c66;font-size:11px;display:flex;justify-content:space-between}.hiddenmsg{margin-top:22px;color:var(--red);font-weight:700;letter-spacing:1px}.stamp{display:inline-block;border:2px solid var(--red);color:var(--red);padding:7px 10px;transform:rotate(-2deg);margin-top:8px}.hp-field{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden}.retry-btn{margin-top:16px}
+@media(max-width:780px){.grid{grid-template-columns:1fr}.meta{display:none}.hero{padding-top:48px}.hero h2{letter-spacing:4px}.details{grid-template-columns:1fr}.subject{font-size:62px}}
+</style>
+</head>
+<body>
+<div class="glitch" id="glitch">DO NOT TRUST THE STAFF</div>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="mark">H</div><div><h1>H-26</h1><small>RESEARCH FACILITY · HUMAN TRIAL DIVISION</small></div></div>
+  <div class="meta">SÃO PAULO · BRASIL<br>EST. 1996<br>ACCESS LEVEL: RESTRICTED</div>
+</header>
+
+<section class="hero screen active" id="s1">
+  <div class="eyebrow">PROTOCOLO DE ACESSO // H26-SYS-001</div>
+  <h2>PROJETO H-26</h2>
+  <p>Você foi selecionado(a) para participar de um estudo experimental sobre comportamento, percepção e os limites da consciência humana.</p>
+  <div class="terminal" id="terminal">
+    &gt; INICIANDO SISTEMA...<br>
+    &gt; VERIFICANDO CONEXÃO...<br>
+    &gt; ACESSANDO BANCO DE DADOS DE SUJEITOS...<br>
+    &gt; CONEXÃO ESTABELECIDA.<br>
+    &gt; BEM-VINDO(A) AO PROJETO H-26.
+  </div>
+  <button class="btn" onclick="go(2)">INICIAR IDENTIFICAÇÃO →</button>
+</section>
+
+<section class="screen" id="s2">
+<div class="grid">
+  <div class="panel">
+    <div class="eyebrow">REGISTRO DE SUJEITO // H26-FRM-014</div>
+    <h3>IDENTIFICAÇÃO DO SUJEITO</h3>
+    <p>Preencha os dados abaixo para registro no Projeto H-26.</p>
+    <div class="field"><label>NOME COMPLETO</label><input id="nome" placeholder="Digite seu nome completo"></div>
+    <div class="field"><label>VOCÊ CONFIRMA SUA PARTICIPAÇÃO NO EXPERIMENTO DE 14.11.2026?</label>
+      <div class="radio"><label><input type="radio" name="rsvp" value="CONFIRMADO" checked> CONFIRMO MINHA PARTICIPAÇÃO</label><label><input type="radio" name="rsvp" value="RECUSADO"> RECUSO-ME A COOPERAR</label></div>
+    </div>
+    <div class="field"><label>NÚMERO DE ACOMPANHANTES</label><select id="acomp"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+    <!-- honeypot: campo invisível para humanos, se vier preenchido tratamos como bot -->
+    <div class="field hp-field" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+    <div class="warning">Ao enviar este registro, seus dados serão adicionados ao banco interno de sujeitos H-26.</div>
+    <button class="btn" id="submitBtn" onclick="processar()">ENVIAR REGISTRO →</button>
+  </div>
+  <aside class="panel side-code">
+    <div class="stamp">ACESSO RESTRITO</div>
+    <p>DIVISÃO: HUMAN TRIAL<br>FASE: OBSERVAÇÃO<br>PROTOCOLO: H-26<br>STATUS: ATIVO</p>
+    <p>CIÊNCIA<br>CONTROLE<br>EVOLUÇÃO</p>
+    <p>MONITORAMENTO CONTÍNUO<br>REGISTRO DE SESSÃO: ATIVO</p>
+  </aside>
+</div>
+</section>
+
+<section class="screen" id="s3">
+  <div class="panel" style="max-width:720px;margin:auto">
+    <div class="eyebrow">PROCESSAMENTO // H26-CORE</div>
+    <h3>PROCESSANDO DADOS</h3>
+    <div class="status" id="status">&gt; VERIFICANDO INFORMAÇÕES...</div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <p id="s3msg">Por favor, não feche esta página.<br>A ciência agradece sua cooperação.</p>
+    <button class="btn retry-btn" id="retryBtn" style="display:none" onclick="go(2)">← VOLTAR E TENTAR NOVAMENTE</button>
+  </div>
+</section>
+
+<section class="screen" id="s4">
+<div class="grid">
+  <div class="panel">
+    <div class="eyebrow">SISTEMA DE REGISTRO // SUJEITO CONFIRMADO</div>
+    <h3>SUJEITO Nº</h3>
+    <p class="subject" id="subject">026</p>
+    <p class="confirmed" id="confstatus">STATUS: CONFIRMADO</p>
+    <div class="details">
+      <div class="detail"><b>NOME</b><span id="outnome">—</span></div>
+      <div class="detail"><b>ACOMPANHANTES</b><span id="outacomp">0</span></div>
+      <div class="detail"><b>DATA</b>14.11.2026</div>
+      <div class="detail"><b>HORÁRIO</b>19H00</div>
+      <div class="detail"><b>LOCAL</b>Rua Pinto Guedes, 171</div>
+      <div class="detail"><b>CIDADE</b>São Paulo · SP</div>
+    </div>
+    <div class="hiddenmsg">ATÉ LÁ, IGNORE QUALQUER ALTERAÇÃO NA SUA PERCEPÇÃO.</div>
+  </div>
+  <aside class="panel side-code">
+    <p>NÃO É NECESSÁRIO TRAZER EQUIPAMENTOS DE PROTEÇÃO.</p>
+    <p>A INSTITUIÇÃO FORNECERÁ TUDO O QUE FOR NECESSÁRIO.</p>
+    <p style="margin-top:60px">MESMOS HUMANOS.<br>NOVOS LIMITES.</p>
+  </aside>
+</div>
+</section>
+
+<div class="footer"><span>H-26 RESEARCH FACILITY · HUMAN TRIAL DIVISION</span><span>USO INTERNO APENAS · H26-WEB-001</span></div>
+</div>
+<script>
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+
+function setStatusErr(msg){
+  const statusEl=document.getElementById('status');
+  statusEl.classList.add('err');
+  statusEl.innerHTML+='<br>&gt; '+msg;
+  document.getElementById('s3msg').style.display='none';
+  document.getElementById('retryBtn').style.display='inline-block';
+}
+
+async function processar(){
+  const nome=document.getElementById('nome').value.trim()||'SUJEITO NÃO IDENTIFICADO';
+  const acomp=document.getElementById('acomp').value;
+  const status=document.querySelector('input[name="rsvp"]:checked').value;
+  const website=document.getElementById('website').value; // honeypot
+
+  // reset da tela de processamento (caso seja uma segunda tentativa)
+  document.getElementById('status').className='status';
+  document.getElementById('status').innerHTML='&gt; VERIFICANDO INFORMAÇÕES...';
+  document.getElementById('s3msg').style.display='';
+  document.getElementById('retryBtn').style.display='none';
+  document.getElementById('bar').style.width='0%';
+  go(3);
+
+  let steps=['> ATRIBUINDO IDENTIFICAÇÃO...','> SINCRONIZANDO BANCO DE DADOS...','> FINALIZANDO REGISTRO...'];
+  let i=0;let pct=10;
+  document.getElementById('bar').style.width=pct+'%';
+  const timer=setInterval(()=>{
+    if(i<steps.length){
+      document.getElementById('status').innerHTML+='<br>'+steps[i];
+      i++;
+      pct+=Math.floor(Math.random()*20)+15;
+      document.getElementById('bar').style.width=Math.min(pct,92)+'%';
+    }
+  },650);
+
+  try{
+    const res=await fetch('/.netlify/functions/h26-send',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({nome,acompanhantes:acomp,status,website})
+    });
+    const data=await res.json().catch(()=>({ok:false}));
+    clearInterval(timer);
+    if(!res.ok||!data.ok){throw new Error(data.error||'FALHA NO ENVIO')}
+
+    document.getElementById('bar').style.width='100%';
+    document.getElementById('outnome').textContent=nome.toUpperCase();
+    document.getElementById('outacomp').textContent=acomp;
+    document.getElementById('confstatus').textContent='STATUS: '+status;
+    document.getElementById('confstatus').style.color=status==='CONFIRMADO'?'var(--green)':'var(--red)';
+    setTimeout(()=>go(4),500);
+  }catch(err){
+    clearInterval(timer);
+    setStatusErr('ERRO NA SINCRONIZAÇÃO. TENTE NOVAMENTE.');
+  }
+}
+
+const msgs=['DO NOT TRUST THE STAFF','SUBJECT 026 IS NOT DEAD','YOU HAVE BEEN HERE BEFORE','REALITY IS A VARIABLE'];setInterval(()=>{if(Math.random()<.22){const g=document.getElementById('glitch');g.textContent=msgs[Math.floor(Math.random()*msgs.length)];g.style.display='block';setTimeout(()=>g.style.display='none',650)}},4500)
+</script>
+</body>
+</html>

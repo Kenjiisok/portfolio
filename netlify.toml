@@ -1,0 +1,7 @@
+[functions]
+  directory = "netlify/functions"
+
+[[headers]]
+  for = "/h26.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
