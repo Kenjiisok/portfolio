@@ -5,11 +5,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Citare - App iOS de frases inspiradoras com curadoria diária. Desenvolvido em SwiftUI com Clean Architecture e Supabase." />
+        content="Citare: app para iPhone com uma frase de filosofia por dia. Mais de 380 citações verificadas de Marco Aurélio, Sêneca, Nietzsche, Clarice Lispector e 70+ autores. Grátis na App Store." />
+    <link rel="canonical" href="https://eduardokenji.com/projects/citare.html" />
+    <meta name="apple-itunes-app" content="app-id=6771962884" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Eduardo Kenji" />
+    <meta property="og:title" content="Citare – Uma frase de filosofia por dia" />
+    <meta property="og:description" content="Mais de 380 citações verificadas de Marco Aurélio, Sêneca, Nietzsche, Clarice e 70+ autores. Grátis para iPhone." />
+    <meta property="og:url" content="https://eduardokenji.com/projects/citare.html" />
+    <meta property="og:image" content="https://eduardokenji.com/assets/projetos/citare.png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Citare – Uma frase de filosofia por dia" />
+    <meta name="twitter:description" content="Mais de 380 citações verificadas de 70+ autores. Grátis para iPhone." />
+    <meta name="twitter:image" content="https://eduardokenji.com/assets/projetos/citare.png" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Citare - Frases Inspiradoras",
+        "operatingSystem": "iOS 17.0+",
+        "applicationCategory": "LifestyleApplication",
+        "inLanguage": "pt-BR",
+        "description": "Uma frase de filosofia por dia. Mais de 380 citações verificadas de 70+ autores, de Marco Aurélio a Clarice Lispector.",
+        "image": "https://eduardokenji.com/assets/projetos/citare.png",
+        "url": "https://eduardokenji.com/projects/citare.html",
+        "installUrl": "https://apps.apple.com/br/app/citare-frases-inspiradoras/id6771962884",
+        "author": { "@type": "Person", "name": "Eduardo Kenji", "url": "https://eduardokenji.com" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+    }
+    </script>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../mediaqueries.css" />
     <link rel="icon" type="image/png" href="../assets/emoji/rosto.PNG" />
-    <title>Citare | Eduardo Kenji</title>
+    <title>Citare – Frases de filosofia e estoicismo para iPhone</title>
     <style>
         .project-page {
             padding: 100px 10%;
@@ -217,6 +248,23 @@
             color: var(--accent-primary);
         }
 
+        .authors-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .authors-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .authors-section p {
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -343,6 +391,17 @@
             </div>
         </div>
 
+        <section class="authors-section">
+            <h2>Quem você vai ler</h2>
+            <p>
+                Citações verificadas — sem frases fabricadas ou atribuídas errado — de estoicos como
+                Marco Aurélio, Sêneca e Epicteto; filósofos como Sócrates, Platão, Confúcio, Lao Tsé,
+                Nietzsche, Kant e Camus; poetas e escritores como Fernando Pessoa, Clarice Lispector,
+                Machado de Assis, Carlos Drummond de Andrade, Rumi, Rilke e Dostoiévski; e pensadores
+                como Carl Jung, Hannah Arendt, Simone de Beauvoir e Thich Nhat Hanh.
+            </p>
+        </section>
+
         <div class="premium-section">
             <h2>Citare Premium</h2>
             <p>
@@ -370,6 +429,10 @@
             <br>
             <a href="https://kenjiisok.github.io/citare-privacy/" target="_blank" class="cta-secondary">
                 Política de privacidade
+            </a>
+            <br>
+            <a href="mailto:contato.citare@gmail.com" class="cta-secondary">
+                Suporte: contato.citare@gmail.com
             </a>
         </div>
     </main>
